@@ -1,0 +1,27 @@
+{
+  "name": "jquery.scrollwatch",
+  "version": "0.3.3",
+  "description": "Triggers events on various page elements as they are scrolled in to and out of view.",
+  "author": "Andrew Cobby <andrew.cobby@gmail.com>",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:cobbweb/jquery.scrollwatch.git"
+  },
+  "devDependencies": {
+    "grunt-contrib-copy": "^0.4.1",
+    "grunt-contrib-jshint": "^0.5.2",
+    "grunt-cli": "^0.1.8",
+    "grunt-contrib-uglify": "^0.2.0",
+    "grunt": "^0.4.1",
+    "mocha": "^1.10.0",
+    "chai": "^1.6.0",
+    "sinon": "^1.7.2",
+    "sinon-chai": "^2.4.0",
+    "chai-jquery": "^1.1.1",
+    "grunt-mocha": "^0.4.0"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,24 @@
+{
+  "name": "jquery.scrollwatch",
+  "version": "0.3.3",
+  "author": "Andrew Cobby <andrew.cobby@gmail.org>",
+  "dependencies": {
+    "jquery": "1.9.0 - 2.1.0",
+    "lodash": "^1.2.1"
+  },
+  "ignore": [
+    "Gruntfile.js",
+    "src/",
+    ".travis.yml"
+  ],
+  "homepage": "https://github.com/cobbweb/jquery.scrollwatch",
+  "_release": "0.3.3",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.3.3",
+    "commit": "4831e46c09a06b25934561e0573e6ba5883df640"
+  },
+  "_source": "git://github.com/cobbweb/jquery.scrollwatch.git",
+  "_target": "0.3.3",
+  "_originalSource": "jquery.scrollwatch"
+}

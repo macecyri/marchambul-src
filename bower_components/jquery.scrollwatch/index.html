@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery Scroll Watcher</title>
+
+  <script src="bower_components/jquery/jquery.js"></script>
+  <script src="bower_components/lodash/lodash.js"></script>
+  <script src="src/jquery.scrollwatch.js"></script>
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Helvetica Neue', Helvetica, sans-serif;
+    }
+
+    .whitespace {
+      height: 2000px;
+    }
+
+    .box {
+      margin: 0 auto;
+      padding: 56px 24px;
+      width: 940px;
+      border: 1px solid #d5d5d5;
+      background-color: #f5f5f5;
+    }
+
+    #huge-box {
+      height: 2000px;
+    }
+  </style>
+</head>
+<body>
+  <div class="whitespace"></div>
+
+  <div id="testing" class="box">Testing div that all day way off the page</div>
+
+  <div class="whitespace"></div>
+
+  <div id="huge-box" class="box">
+    Huge box
+  </div>
+
+  <div class="whitespace"></div>
+
+  <script>
+
+  $('#testing')
+    .css('height', document.documentElement.clientHeight + 'px')
+    .scrollWatch()
+      .on('scrollin', function(e) { console.log('in', e.direction); })
+      .on('scrollout', function(e) { console.log('out', e.direction); })
+      .handleScroll();
+
+  $('#huge-box').scrollWatch()
+    .on('scrollin', function(e) { console.log('huge in', e.direction); })
+    .on('scrollout', function(e) { console.log('huge out', e.direction); })
+    .on('scroll', function(e) { console.log('huge visibility', e.visibility); })
+    .handleScroll();
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+{
+  "name": "marchambul-src",
+  "version": "0.0.0",
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "bootstrap-sass-official": "~3.3.4",
+    "bootstrap-additions": "~0.2.2",
+    "font-awesome": "4.3.0",
+    "jquery.scrollwatch": "0.3.3"
+  },
+  "overrides": {
+    "font-awesome": {
+      "main": [
+        "./fonts/FontAwesome.otf",
+        "./fonts/fontawesome-webfont.eot",
+        "./fonts/fontawesome-webfont.svg",
+        "./fonts/fontawesome-webfont.ttf",
+        "./fonts/fontawesome-webfont.woff"
+      ]
+    },
+    "jquery.scrollwatch": {
+      "main": [
+        "./jquery.scrollwatch.js"
+      ]
+    }
+  }
+}
