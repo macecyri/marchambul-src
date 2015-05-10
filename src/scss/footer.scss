@@ -1,0 +1,21 @@
+@import '../config';
+
+img.pre-footer{
+    width: 100%;
+    margin-top: 300px
+}
+
+footer {
+  padding: 20px 0;
+  background: url(img/pre-header.jpg);
+
+  #contact {
+  	font-size: 3em;
+  	text-align: center;
+  	color: $white;
+  	margin-top: 50px;
+  	h3 {
+  		text-shadow: 2px 1px 1px $black_60;
+  	}
+  }
+}

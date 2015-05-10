@@ -1,0 +1,16 @@
+// Footer
+img.pre-footer(src='img/footer.png')
+footer
+  .container
+    #contact
+      .row
+        .col-lg-12
+          h3 Nous sommes ouverts &agrave; tout type de partenariat, contactez nous via :
+        .col-lg-12
+          ul.list-inline.banner-social-buttons
+            | {% for social in site.social %}
+            li
+              a.btn.btn-default.btn-lg(href='{{ social.url }}')
+                i.fa.fa-fw(class='fa-{{social.icon}}')
+                span.network-name {{ social.title }}
+            |                         {% endfor %}

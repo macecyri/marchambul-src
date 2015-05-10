@@ -1,0 +1,84 @@
+@import '../../config';
+
+
+.pre-header {
+	padding-top: 50px;
+	height: 50px;
+	background: url(img/pre-header.jpg);
+}
+
+.intro-header {
+	padding-top: 50px;
+	padding-bottom: 50px;
+	text-align: center;
+	color: $light_white_intro_color;
+	background: url(img/bg-logo.jpg) no-repeat center center;
+	background-size: cover;
+
+	.intro-container {
+		position: relative;
+		margin-top: -30px;
+		padding-bottom: 350px;
+		> {
+			// main title : Comment democratiser...
+			h1 {
+				margin: 0;
+				text-shadow: 0 0 8px $black_80;
+				font-size: 2.5rem;
+				font-weight: normal;
+				margin-bottom: 50px;
+			}
+			// stat : 71% preferebnt....
+			h3.stat {
+				text-shadow: 0 0 8px $black_80;
+				font-size: 2.5rem;
+				padding-bottom: 0;
+				letter-spacing: -0.5px;
+				// red color for stats
+				span.highlight{
+				  color: red;
+				  font-weight: 600;
+				}
+			}
+			// slogan : Le marche ambulant qui se faufile....
+			h3.slogan {
+				padding-bottom: 25px;
+				margin-top: -10px;
+				text-transform: uppercase;
+				font-size: 2rem;
+				text-shadow: 1px 1px 0 $black_20;
+				color: $black;
+			}
+		}
+		.intro-divider {
+			width: 400px;
+			border-top: 1px solid $black_60;
+			border-bottom: 1px solid $black_20;
+			margin-top: 6px;
+		}
+	}
+}
+
+
+
+
+/*******************************
+****** Media queries ***********
+******************************/
+@include mobile {
+	.intro-header {
+	  .intro-container > {
+			h3.stat, h1 {
+	    font-size: 2.2rem ;
+	    padding-bottom: 20px;
+			}
+			h3.slogan{
+				font-size: 1.6rem ;
+			}
+			img{
+				width: 100%;
+				max-width: 500px;
+			}
+		}
+  }
+}

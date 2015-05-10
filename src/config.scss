@@ -1,0 +1,31 @@
+$font-family-base: 'Open Sans';
+
+//colors
+$background_color: #ffffef;
+$light_grey_text_color: #717171;
+$light_white_intro_color: #f8f8f8;
+$black_20: rgba(0,0,0,0.2);
+$black_60: rgba(0,0,0,0.6);
+$black_80: rgba(0,0,0,0.6);
+$red: red;
+$black: black;
+$white: white;
+
+
+//Bootstrap config
+$navbar-height: 50px;
+$navbar-default-bg: black;
+$navbar-default-color : $white;
+$navbar-default-border: $white;
+$icon-font-path: 'fonts';
+$fa-font-path:        'fonts';
+
+
+//Media queries variables
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+
+@import 'scss/mixins.scss';
+@import '../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/variables';
+@import '../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins';

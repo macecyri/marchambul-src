@@ -1,0 +1,19 @@
+@import '../config';
+
+.navbar-brand {
+  color: $white !important;
+  font-weight: 400;
+}
+
+.navbar-button {
+  border: 1px solid $white;
+  color: $white !important;
+  line-height: 5px !important;
+  margin-top: 5px;
+  margin-left: 5px;
+  font-weight: 400;
+  &:hover {
+    background-color: $white !important;
+    color: $black !important;
+  }
+}

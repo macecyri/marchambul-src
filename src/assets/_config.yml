@@ -1,0 +1,36 @@
+# ----------------------- #
+#      Main Configs       #
+# ----------------------- #
+
+url: http://yoursite.com
+title: Marchambul - un projet ouvert à tous
+email: your-email@domain.com
+description: > # "Write an awesome description for your new site here.
+  You can edit this line in _config.yml. It will appear in your document
+  head meta (for Google search results) and in your feed.xml site
+  description."
+
+# ----------------------- #
+#    Jekyll & Plugins     #
+# ----------------------- #
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+# ----------------------- #
+#   3rd Party Settings    #
+# ----------------------- #
+
+social:
+  - title: Email
+    url: mailto:contact@marchambul.com?Subject=Bonjour%20Marchambul
+    icon: envelope
+  - title: Facebook
+    url: https://www.facebook.com/marchambul
+    icon: facebook
+  - title: twitter
+    url: https://twitter.com/marchambul
+    icon: twitter
+
+descriptionCarte: Repérez et interagissez avec les triporteurs
