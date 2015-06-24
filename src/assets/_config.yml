@@ -18,6 +18,11 @@ description: > # "Write an awesome description for your new site here.
 markdown: kramdown
 permalink: pretty
 
+collections:
+  tournees:
+    output: true
+    permalink: /tournees/:name/
+
 # ----------------------- #
 #   3rd Party Settings    #
 # ----------------------- #

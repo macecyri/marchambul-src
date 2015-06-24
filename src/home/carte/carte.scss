@@ -1,0 +1,88 @@
+#carte {
+  margin-top: 50px;
+  #map{
+    height: 750px;
+    border: 1px solid #ccc;
+  }
+  #list-tournees{
+
+    accordion{
+      .panel-heading{
+        background-color: white;
+      }
+      img{
+        height: 80px;
+      }
+      .media-heading{
+        font-weight: 600;
+        margin-bottom: 0.8rem;
+      }
+      p{
+        margin-top: 0.8rem;
+        font-style: italic;
+        font-weight: 300;
+      }
+    }
+  }
+}
+
+itineraire{
+  display: inline-block;
+  width: 250px;
+  height: 200px;
+}
+
+.description-tournee{
+  font-size: 12px;
+  display: block;
+  margin-top: 0.3rem;
+  font-style: italic;
+}
+
+.section-title{
+  height: 30px;
+}
+
+.custom-popup .leaflet-popup-content-wrapper {
+  border-radius: 3px;
+  font-size:14px;
+  line-height:20px;
+  width: 400px;
+
+  img {
+    width: 100%;
+  }
+
+
+
+  .leaflet-popup-content{
+    width: initial !important;
+  }
+
+  h2{
+    text-align: center;
+    font-size:18px;
+  }
+
+  ul{
+      list-style: none
+  }
+
+  table{
+
+    img {
+      width: 80px !important;
+      margin-right: 10px;
+    }
+
+    tr{
+      &:not(:last-child){
+        border-bottom: 1px solid #ccc;
+      }
+    }
+    td{
+      padding: 8px 0px;
+      min-width: 50px;
+    }
+  }
+}

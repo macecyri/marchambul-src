@@ -23,7 +23,7 @@ gulp.task 'watch', ['markups','injectandjekyll', 'localfonts'], ->
 gulp.task 'jekyll', (gulpCallBack)->
   console.log "build JEKYLL"
   exec = require('child_process').exec
-  jekyllCommand = "jekyll build  --source #{paths.tmp}/jekyll_src --destination #{paths.tmp}/jekyll_site --watch"
+  jekyllCommand = "jekyll build  --source #{paths.tmp} --destination #{paths.tmp_site} --watch"
 
   exec jekyllCommand, (err, stdout, stderr)->
     console.log stdout
@@ -37,4 +37,4 @@ gulp.task 'localfonts', ->
   gulp.src $.mainBowerFiles()
   .pipe $.filter('**/*.{eot,svg,ttf,woff}')
   .pipe $.flatten()
-  .pipe gulp.dest(paths.tmp + '/jekyll_src/fonts/')
+  .pipe gulp.dest(paths.tmp + '/fonts/')

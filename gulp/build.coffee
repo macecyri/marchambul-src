@@ -29,11 +29,15 @@ html = (tmp_dir, dist_dir)->
   cssFilter = $.filter('**/*.css')
   assets = undefined
 
-  gulp.src(tmp_dir + '/serve/*.html')
+  gulp.src(tmp_dir + '/jekyll_src/**/*.html')
   # inject templateCacheHtml.js into index.html
   .pipe $.inject(partialsInjectFile, partialsInjectOptions)
   # Get the stream with the concatenated asset files (gulp-useref) and automatically change the revision number (gulp-rev) :   unicorn.css → unicorn-098f6bcd.css.
+  .pipe $.debug
+    title: 'before useref:'
   .pipe(assets = $.useref.assets())
+  .pipe $.debug
+    title: 'after useref:'
   .pipe $.rev()
   # js specific processing
   .pipe jsFilter
@@ -50,39 +54,25 @@ html = (tmp_dir, dist_dir)->
   .pipe $.useref()
   .pipe $.revReplace()
   #  html specific processing
-  .pipe htmlFilter
-  .pipe $.minifyHtml
-    empty: true
-    spare: true
-    quotes: true
-  .pipe htmlFilter.restore()
+  # .pipe htmlFilter
+  # .pipe $.minifyHtml
+  #   empty: true
+  #   spare: true
+  #   quotes: true
+  # .pipe htmlFilter.restore()
   #  finish : we copy the final html file
   .pipe gulp.dest(dist_dir + '/')
-
 
 
 gulp.task 'partials', [ 'markups' ], ->
   partials paths.tmp
 
-gulp.task 'partials-mobile', [ 'markups-mobile' ], ->
-  partials paths.mobile_tmp
-
-
-gulp.task 'html', ['inject', 'partials'], ->
+gulp.task 'html', ['inject', 'partials', 'finalAssets', 'minifyVendorCss'], ->
   html paths.tmp, paths.dist
-
-gulp.task 'html-mobile', ['inject-mobile', 'partials-mobile'], ->
-  html paths.mobile_tmp, paths.mobile_dist
-
 
 gulp.task 'images', ->
   gulp.src(paths.src + '/assets/images/**/*')
   .pipe gulp.dest(paths.dist + '/assets/images/')
-
-gulp.task 'images-mobile', ->
-  gulp.src(paths.src + '/assets/images/**/*')
-  .pipe gulp.dest(paths.mobile_dist + '/assets/images/')
-
 
 gulp.task 'fonts', ->
   gulp.src $.mainBowerFiles()
@@ -90,27 +80,36 @@ gulp.task 'fonts', ->
   .pipe $.flatten()
   .pipe gulp.dest(paths.dist + '/fonts/')
 
-gulp.task 'fonts-mobile', ->
-  gulp.src $.mainBowerFiles()
-  .pipe $.filter('**/*.{eot,svg,ttf,woff}')
-  .pipe $.flatten()
-  .pipe gulp.dest(paths.mobile_dist + '/fonts/')
-
-
 gulp.task 'misc', ->
   gulp.src(paths.src + '/**/*.ico')
   .pipe gulp.dest(paths.dist + '/')
 
-gulp.task 'misc-mobile', ->
-  gulp.src(paths.src + '/**/*.ico')
-  .pipe gulp.dest(paths.mobile_dist + '/')
+gulp.task 'finalAssets', ->
+  gulp.src(paths.src + '/assets/**/*')
+  .pipe gulp.dest(paths.dist)
 
+gulp.task 'minifyVendorCss', ->
+  gulp.src(paths.tmp + '/vendor.css')
+  .pipe $.debug
+    title: 'befor csso'
+  .pipe $.csso()
+  .pipe $.debug
+    title: 'after csso'
+  .pipe gulp.dest(paths.dist)
 
 gulp.task 'cleanTmp', (done) ->
   $.del [
-    paths.tmp + '/jekyll_site'
-    paths.tmp + '/jekyll_src/**/*'
-    '!' + paths.tmp + '/jekyll_src/.git'
+    paths.tmp
+    paths.tmp_site + '/**/*'
+    '!' + paths.tmp + '/.git'
+  ], done
+
+gulp.task 'clean', (done) ->
+  $.del [
+    paths.dist + '/**/*'
+    '!' + paths.dist + '/.git'
+    '!' + paths.dist + '/.gitignore'
+    '!' + paths.dist + '/**/*.md'
   ], done
 
 gulp.task 'cserve', ->
@@ -119,19 +118,9 @@ gulp.task 'cserve', ->
 gulp.task 'cleanbuild', ->
   $.runSequence 'clean', 'build'
 
-gulp.task 'cleanbuild:mobile', ->
-  $.runSequence 'clean-mobile', 'build-mobile'
-
 gulp.task 'build', [
   'html'
   'images'
   'fonts'
   'misc'
-]
-
-gulp.task 'build-mobile', [
-  'html-mobile'
-  'images-mobile'
-  'fonts-mobile'
-  'misc-mobile'
 ]

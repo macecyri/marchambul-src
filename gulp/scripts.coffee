@@ -25,7 +25,7 @@ compileScripts = (src_pattern, tmp_dir)->
     console.error err.toString()
     @emit 'end'
 
-  .pipe gulp.dest(tmp_dir + '/jekyll_src/')
+  .pipe gulp.dest(tmp_dir + '/')
   .pipe $.size()
 
 
@@ -54,5 +54,5 @@ gulp.task 'updatescripts', ->
     console.error err.toString()
     @emit 'end'
 
-  .pipe gulp.dest(paths.tmp + '/jekyll_src/')
+  .pipe gulp.dest(paths.tmp + '/')
   .pipe $.size()

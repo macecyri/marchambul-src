@@ -1,0 +1,66 @@
+#carte.container(ng-controller="CarteCtrl")
+  .row
+    .col-md-7
+      h3.section-title.center 
+        i.fa.fa-bullhorn
+          span.margin-left Les tournées en cours
+      #map
+    .col-md-5
+      #list-tournees
+        h3.section-title.center 
+          i.fa.fa-calendar
+            span.margin-left Les prochaines tournées
+        accordion
+          accordion-group
+            accordion-heading.media
+              .media-left
+                img(src="img/vendeurs/yann-le-maraicher.jpg")
+                i.fa.fa-user
+                  span.vendor-label Yann  le marchand de rêve
+              .media-body
+                h4.media-heading tournée à l'île-saint-denis
+                i.fa.fa-clock-o
+                  span.icon-label 03 juillet 2015 : 10h - 18h
+                p on va déambuler dans l'île saint denis pour vous proposer des légumes du jardin d'hippolyte
+              
+            .col-md-8
+              itineraire
+            .col-md-4
+              i.fa.fa-clock-o.margin-bottom
+                span.icon-label 10h - 12h 
+                span.description-tournee place de la libération
+              i.fa.fa-clock-o.margin-bottom
+                span.icon-label 13h - 15h
+                span.description-tournee école du centre
+              i.fa.fa-clock-o
+                span.icon-label 15h - 18h
+                span.description-tournee ALJT Résidence RJAM 
+                
+                
+          accordion-group
+            accordion-heading.media
+              .media-left
+                img(src="img/vendeurs/cyril-vendeur.jpg")
+                i.fa.fa-user
+                  span.vendor-label Cyril l'artisan en herbes
+              .media-body
+                h4.media-heading tournée à paris 19ème
+                i.fa.fa-clock-o
+                  span.icon-label 05 juillet 2015 : 15h - 21h
+                p Venez goûter les fruits frais de la Ferme des Quatre Saisons
+                
+          accordion-group
+            accordion-heading.media
+              .media-left
+                img(src="img/vendeurs/alesc.jpg")
+                i.fa.fa-user
+                  span.vendor-label Alexandre le cuisto vert
+              .media-body
+                h4.media-heading tournée à paris 11ème
+                i.fa.fa-clock-o
+                  span.icon-label 06 juillet 2015 : 9h - 15h
+                p Venez goûter les fruits et légumes de la Ferme de Chatenoy
+                
+      
+      
+  

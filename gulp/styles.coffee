@@ -10,7 +10,7 @@ compileStyles = (src_pattern, tmp_dir)->
   .pipe $.autoprefixer()
   .pipe $.rename
     dirname: "/"
-  .pipe gulp.dest tmp_dir + '/jekyll_src/'
+  .pipe gulp.dest tmp_dir + '/'
 
 
 gulp.task 'styles', ->

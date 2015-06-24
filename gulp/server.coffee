@@ -1,8 +1,6 @@
 browserSyncInit = (baseDir, files, browser) ->
   browser = if browser == undefined then 'default' else browser
-  routes = null
-  if baseDir == paths.src or util.isArray(baseDir) and baseDir.indexOf(paths.src) != -1
-    routes = '/bower_components': 'bower_components'
+  routes = '/bower_components': 'bower_components'
   browserSync.instance = browserSync.init(files,
     startPath: '/'
     server:
@@ -11,12 +9,12 @@ browserSyncInit = (baseDir, files, browser) ->
     browser: browser)
 
 serve = (tmp_dir)->
-  baseDir = tmp_dir + '/jekyll_site'
+  baseDir = tmp_dir
   browserSyncInit baseDir, [
-    tmp_dir + '/jekyll_site/**/*.css'
-    tmp_dir + '/jekyll_site/**/*.js'
-    tmp_dir + '/jekyll_site/**/*'
-    tmp_dir + '/jekyll_site/**/*.html'
+    tmp_dir + '/**/*.css'
+    tmp_dir + '/**/*.js'
+    tmp_dir + '/**/*'
+    tmp_dir + '/**/*.html'
   ]
 
 
@@ -27,10 +25,7 @@ util = require('util')
 browserSync = require('browser-sync')
 
 gulp.task 'serve', [ 'watch' ], ->
-  serve paths.tmp
-
-gulp.task 'serve:mobile', [ 'watch-mobile' ], ->
-  serve paths.mobile_tmp
+  serve paths.tmp_site
 
 gulp.task 'serve:dist', [ 'build' ], ->
   browserSyncInit paths.dist

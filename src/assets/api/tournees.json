@@ -1,0 +1,5 @@
+---
+layout: tournee
+---
+
+{{ site.tournees | jsonify }}

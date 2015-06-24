@@ -6,8 +6,9 @@ env               = argv.p
 
 gulp.paths =
   src: 'src'
-  dist: 'dist'
-  tmp: '.tmp'
+  dist: 'website'
+  tmp: 'jekyll_src'
+  tmp_site: 'jekyll_site'
   e2e: 'e2e'
   mobile_dist: 'www'
   mobile_tmp: '.tmp.mobile'

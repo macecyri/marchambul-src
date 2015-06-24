@@ -8,4 +8,4 @@ $ = require('gulp-load-plugins')()
 gulp.task 'markups', ->
   gulp.src(paths.src + '/**/*.jade')
   .pipe $.jade()
-  .pipe gulp.dest(paths.tmp + '/jekyll_src/')
+  .pipe gulp.dest(paths.tmp + '/')
