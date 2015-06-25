@@ -22,6 +22,9 @@ collections:
   tournees:
     output: true
     permalink: /tournees/:name/
+  vendeurs:
+    output: true
+    permalink: /vendeurs/:name/
 
 # ----------------------- #
 #   3rd Party Settings    #

@@ -19,4 +19,10 @@ angular.module "marchambul", [
         url: '/'
         controller: 'HomeCtrl'
 
+      # The home context (url: '' or '/') redirect to the page showing the applications
+      .state 'app.vendor',
+        url: '/vendors/yann'
+        controller: 'HomeCtrl'
+        templateUrl: '/templates/vendor.html'
+
     $urlRouterProvider.otherwise '/'

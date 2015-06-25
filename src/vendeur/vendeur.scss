@@ -1,0 +1,32 @@
+#vendeur{
+  margin-top: 50px;
+}
+
+.profile-img{
+  width: 160px;
+  height: 160px;
+}
+
+.profile-panel{
+  margin: 10px 0px;
+  padding: 10px;
+
+  .media-body{
+    vertical-align: middle;
+  }
+}
+
+.bio-panel{
+  padding: 0px 10px 0px 0px;
+}
+
+ul.list-tournees{
+  list-style: none;
+  li{
+    padding: 10px 0px;
+    height: 50px;
+    &:not(:last-child){
+      border-bottom: 1px solid #ccc;
+    }
+  }
+}
